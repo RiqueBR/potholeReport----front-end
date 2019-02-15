@@ -21,5 +21,7 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "_comment:": "Adding proxy route to request API",
+"proxy": "http://localhost:8080/"
 }
