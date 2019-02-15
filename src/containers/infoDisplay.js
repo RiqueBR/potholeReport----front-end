@@ -5,8 +5,18 @@ import Request from '../helpers/request.js'
 
 class InfoDisplay extends Component {
 
-    componentDidMount(){
+    constructor(props){
+        super(props);
+        this.state = {
+            potholes: []
+        }
+    }
 
+    componentDidMount(){
+        let request = new Request()
+        request.get('/api/potholes').then((data) => {
+         console.log(data._embedded);
+        })
     }
 
 
