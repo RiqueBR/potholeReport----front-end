@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Request from '../helpers/request.js'
+import Pothole from '../components/pothole.js'
+import PotholeList from '../components/potholeList.js';
 
 
-
+// Here, InfoDisplay is the landing page
 class InfoDisplay extends Component {
 
     constructor(props){
@@ -15,16 +17,15 @@ class InfoDisplay extends Component {
     componentDidMount(){
         let request = new Request()
         request.get('/api/potholes').then((data) => {
-         console.log(data._embedded);
+         this.setState({potholes: data._embedded.potholes})
         })
     }
 
 
     render() {
         return (
-            <div>
-                <h2>I'm a container</h2>
-            </div>
+            // <p>I'm a container</p>
+         <PotholeList potholes={this.state.potholes} />
         );
     }
 }

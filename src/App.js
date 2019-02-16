@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import InfoDisplay from './containers/infoDisplay'
+import Header from './components/header.js'
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Listening on port:3000!</h1>
+        <Header />
         <InfoDisplay />
       </div>
     );

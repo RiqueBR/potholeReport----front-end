@@ -1,3 +1,11 @@
+html, body {
+  height: 100%;
+  background: -webkit-linear-gradient(left bottom, #002092, #004fb4, #0075c4, #0098c7, #1ab9c8);
+  background-image: linear-gradient(to right top, #002092, #004fb4, #0075c4, #0098c7, #1ab9c8);
+  color: #fff;
+  font-family: Lato, serif;
+}
+
 .App {
   text-align: center;
 }
