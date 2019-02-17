@@ -8,9 +8,9 @@ const PotholeList = (props) => {
     const potholes = props.potholes.map( pothole => {
        
         return (
-            <li key={pothole.id} className="pothole-item">
+            <div key={pothole.id} className="pothole-item">
                 <Pothole pothole={pothole}/>
-            </li>
+            </div>
         )
     })
 

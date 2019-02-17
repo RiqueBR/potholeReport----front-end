@@ -10,7 +10,7 @@ const Pothole = (props) => {
     return (
         <div className="single-pothole">
             <p>Location: {location}</p>
-            <p>Diameter: {diameter}</p>
+            <p>Diameter: {diameter}cm</p>
             <p>Description: {description}</p>
         </div>
     );

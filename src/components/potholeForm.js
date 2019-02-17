@@ -9,7 +9,7 @@ const PotholeForm = (props) => {
        const pothole = {
            'location': event.target.location.value,
            'diameter': event.target.diameter.value,
-           'image': event.target.description.value
+           'description': event.target.description.value
        }
 
        props.handlePotholePost(pothole)
@@ -18,9 +18,12 @@ const PotholeForm = (props) => {
     return (
         <div className='form-container'>
             <form className='form-layout' onSubmit={handleSubmit}>
-                <input className='input-field' type='text' placeholder='Location' name='location'/>
-                <input className='input-field' type='text' placeholder='Diameter (meters)' name='diameter' />
-                <textarea className='input-field' type='text' placeholder='Description' name='description'/>
+                <label>Location</label>
+                <input className='input-field' type='text' name='location'/>
+                <label>Diameter (cm)</label>
+                <input className='input-field' type='text' name='diameter' />
+                <label>Description</label>
+                <input className='input-field' type='text' name='description'/>
 
                 <button className='button-form' type='Submit'>Submit</button>
             </form>

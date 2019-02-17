@@ -1,36 +1,90 @@
 html, body {
   height: 100%;
   background: -webkit-linear-gradient(left bottom, #002092, #004fb4, #0075c4, #0098c7, #1ab9c8);
+  background-image: -webkit-linear-gradient(left bottom, #002092, #004fb4, #0075c4, #0098c7, #1ab9c8);
   background-image: linear-gradient(to right top, #002092, #004fb4, #0075c4, #0098c7, #1ab9c8);
   color: #fff;
   font-family: Lato, serif;
 }
 
+button{
+  background: none;
+  border: 3px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  display: block;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  text-transform: uppercase;
+}
+
+label {
+  text-align: left;
+  text-align: initial;
+}
+
+div.head-container {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.pothole-item{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 40%;
+  padding: 20px;
+  margin: 10px;
+  width: 245px;
+}
+
+.item-list {
+  list-style: none;
+  margin-left: 120px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
 
 .main-container{
+  display: -webkit-flex;
   display: flex;
   margin-left: 5px;
   margin-right: 5px;
-  margin-top: 18pt;
-  height: 265pt;
+  margin-top: 70px;
+  height: 230px;
 }
 
+.form-container{
+  margin-right: 50px;
+  padding-left: 20px;
+  width: 500px;
+  margin-top: 30px;
+}
+
+
+
 .form-layout{
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+          flex-direction: column;
   margin-left: 30px;
   margin-right: 20px;
 }
 
 .input-field{
-  font-weight:500;
-	font-size: 18px;
-	border-radius: 0;
-	line-height: 22px;
-	background-color: #fbfbfb;
-	padding: 13px 13px 13px 54px;
-	margin-bottom: 10px;
-	width:100%;
+font-weight: 500;
+font-size: 18px;
+border-radius: 6px;
+line-height: 25px;
+background-color: #fbfbfb;
+padding: 13px 13px 13px 60px;
+margin-bottom: 25px;
+width: 100%;
 }
 
 
@@ -38,32 +92,6 @@ html, body {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
