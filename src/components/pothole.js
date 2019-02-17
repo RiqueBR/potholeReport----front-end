@@ -3,7 +3,7 @@ import React from 'react';
 const Pothole = (props) => {
     
     
-    const {location, diameter, image} = props.pothole;
+    const {location, diameter, description} = props.pothole;
     
     
     
@@ -11,7 +11,7 @@ const Pothole = (props) => {
         <div className="single-pothole">
             <p>Location: {location}</p>
             <p>Diameter: {diameter}</p>
-            <p>Image: {image}</p>
+            <p>Description: {description}</p>
         </div>
     );
 };

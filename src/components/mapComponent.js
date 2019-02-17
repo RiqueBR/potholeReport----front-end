@@ -19,19 +19,20 @@ export class MapComponent extends Component {
     
     render() {
       const style = {
-          width: '70%',
-          height: '80vh'
+        height: '75vh',
+        width: '50vw'
       }
 
         return (
-        <>    
-         <Map 
-            style={style} 
-            google={this.props.google} 
-            zoom={14} 
-            initialCenter={{ lat: 39.648209, lng: -75.711185 }} />
-            <Marker onClick={this.onMarkerClick}/>
-        </>    
+        // <div className="map-container">     
+                <Map 
+                // style={style} 
+                google={this.props.google} 
+                zoom={14} 
+                initialCenter={{ lat: 39.648209, lng: -75.711185 }}>
+                {/* <Marker onClick={this.onMarkerClick}></Marker> */}
+                </Map>  
+        // </div>    
         );
     }
 }

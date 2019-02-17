@@ -18,22 +18,6 @@ class InfoDisplay extends Component {
         // this.handleDelete = this.handleDelete.bind(this)
     }
 
-
-
-    // geocoder = new google.maps.geocoder();
-
-    // getGeoData(){
-
-    // } 
-
-//   getData(latlng){
-//     let lat = latlng.lat
-//     let lng = latlng.lng
-//     fetch(`https://api.darksky.net/forecast/9ba968aba945b3577b3c75bb674dcfbd/${lat},${lng}`)
-//     .then(res => res.json())
-//     .then(data => this.setState({data: data.daily.data}))
-//   }
-
     componentDidMount(){
         let request = new Request()
         request.get('/api/potholes').then((data) => {
@@ -52,12 +36,11 @@ class InfoDisplay extends Component {
 
     render() {
         return (
-        <>    
-            // <p>I'm a container</p>
-         <PotholeList potholes={this.state.potholes} />
+        <div className="main-container">    
          <PotholeForm handlePotholePost={this.handlePotholePost} />
-         <MapComponent />
-        </>
+         <PotholeList potholes={this.state.potholes} />
+         {/* <MapComponent /> */}
+        </div>
         );
     }
 }

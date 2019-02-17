@@ -14,11 +14,10 @@ const PotholeList = (props) => {
         )
     })
 
-    
+
 
     return (
-        <div>
-           <p>I'm a list of potholes</p>
+        <div className="item-list">
            {potholes}
         </div>
     );
