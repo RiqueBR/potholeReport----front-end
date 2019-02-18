@@ -4,7 +4,7 @@ import MapMarker from './mapMarker.js'
 
 const MapComponent = withScriptjs(withGoogleMap((props) =>{
 
-        // loop to obtain the list of objects and reassign the position
+        // loop to obtain the list of objects and trim the API
         for (let i in props.potholes) {
         var data = props.potholes[i];
         }
@@ -24,12 +24,29 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>{
             });
        
             
-
-      const singleMarker = props.potholes.map( pothole => <MapMarker
+       
+          function handleMapMarker(){
+	            return pothole => {
+                console.log(geocoder);
+		 
+          return (
+                <MapMarker
                     key={pothole.id}
                     pothole={pothole}
                     location={{lat: pothole.lat, lng: pothole.lng}} 
-                  />);
+                  />
+                  );
+	}
+}
+const singleMarker = props.potholes.map(handleMapMarker());
+
+    
+
+      // const singleMarker = props.potholes.map( pothole => <MapMarker
+      //               key={pothole.id}
+      //               pothole={pothole}
+      //               location={{lat: pothole.lat, lng: pothole.lng}} 
+      //             />);
               
                   
   return (
@@ -45,4 +62,21 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>{
 
 export default MapComponent;
 
+
+function newFunction(data) {
+  let geocoder = new window.google.maps.Geocoder();
+  geocoder.geocode({ 'address': data.location }, function (results, status) {
+    if (status === 'OK') {
+      var lat = results[0].geometry.location.lat();
+      var lng = results[0].geometry.location.lng();
+      //lat = location.lat(),
+      //lng = location.lng(); 
+      console.log(lat, lng);
+    }
+    else {
+      console.log('Geocode was not successful for the following reason: ' + status);
+    }
+  });
+  return geocoder;
+}
 // Glasgow lat: 55.86515, lng: -4.25763;
