@@ -41,7 +41,7 @@ class InfoDisplay extends Component {
         <div className="main-container">    
          <PotholeForm handlePotholePost={this.handlePotholePost} />
          <PotholeList potholes={this.state.potholes} />
-         <MapContainer potholes={this.state.potholes} />
+         {/* <MapContainer className="map-container" potholes={this.state.potholes} /> */}
         </div>
         );
     }
