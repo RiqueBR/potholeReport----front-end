@@ -4,52 +4,41 @@ import MapMarker from './mapMarker.js'
 
 const MapComponent = withScriptjs(withGoogleMap((props) =>{
 
- 
+        // loop to obtain the list of objects and reassign the position
+        for (let i in props.potholes) {
+        var data = props.potholes[i];
+        }
+
+            // Geocoder services from Geocoder API -- Initialising and running a basic search
+            let geocoder = new window.google.maps.Geocoder();
+            geocoder.geocode( { 'address': data.location}, function(results, status) {
+            if (status === 'OK') {
+                var lat = results[0].geometry.location.lat();
+                var lng = results[0].geometry.location.lng();
+                //lat = location.lat(),
+                //lng = location.lng(); 
+                console.log(lat, lng);
+                } else {
+                console.log('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+
+              // lat: results[0].geometry.location.lat(), 
+              // lng: results[0].geometry.location.lng()
+       
+            
+
       const singleMarker = props.potholes.map( pothole => <MapMarker
                     key={pothole.id}
                     pothole={pothole}
-                    address={{address: pothole.location}}
+                    location={{lat: pothole.lat, lng: pothole.lng}} 
                   />);
-        // for (let i in props.potholes) {
-        // const data = props.potholes[i].location;
-        // console.log(data);
-        // }
-
-        // let data = Object.keys(obj).forEach(key => {
-        // console.log(obj[key]);
-        // });
-   
-       
-        let data = props.potholes.forEach(function(obj) {
-            console.log(obj.location);
-             });
-
-            //  let newData = props.potholes.map((pothole, i) => {
-            //     let objLocation = pothole[i].location;
-            //  })
-             
-       
-    
-
-    let geocoder = new window.google.maps.Geocoder();
-    geocoder.geocode( { 'address': 'Barker st'}, function(results, status) {
-            if (status === 'OK') {
-                console.log(results);
-            } else {
-                console.log('Geocode was not successful for the following reason: ' + status);
-            }
- });
-
- 
-
-
-
-                  
+              
                   
   return (
       <GoogleMap
         defaultZoom={14}
-        center={ { lat:  55.86515, lng: -4.25763 } }
+        center={{ lat:  55.86515, lng: -4.25763 }}
         >
         {singleMarker}
       </GoogleMap>

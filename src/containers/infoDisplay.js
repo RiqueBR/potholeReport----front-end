@@ -18,6 +18,7 @@ class InfoDisplay extends Component {
         // this.handleDelete = this.handleDelete.bind(this)
     }
 
+    // Get all potholes
     componentDidMount(){
         let request = new Request()
         request.get('/api/potholes').then((data) => {
@@ -25,6 +26,7 @@ class InfoDisplay extends Component {
         })
     }
 
+    // Create a pothole instance
     handlePotholePost(pothole){
         const request = new Request();
         request.post('/api/potholes', pothole).then(() => {

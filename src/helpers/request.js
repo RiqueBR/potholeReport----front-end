@@ -4,7 +4,7 @@ class Request{
         return fetch(url)
         .then((res) => res.json());
     }
-
+    
     post(url, payload){
         return fetch(url, {
             method: 'POST',
