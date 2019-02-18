@@ -22,9 +22,6 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>{
                 console.log('Geocode was not successful for the following reason: ' + status);
                 }
             });
-
-              // lat: results[0].geometry.location.lat(), 
-              // lng: results[0].geometry.location.lng()
        
             
 
