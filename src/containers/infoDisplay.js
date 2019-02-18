@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Request from '../helpers/request.js'
 import PotholeList from '../components/potholeList.js';
 import PotholeForm from '../components/potholeForm.js'
-import MapComponent from '../components/mapComponent.js'
+import MapContainer from './mapContainer.js'
 
 
 // Here, InfoDisplay is the landing page
@@ -39,7 +39,7 @@ class InfoDisplay extends Component {
         <div className="main-container">    
          <PotholeForm handlePotholePost={this.handlePotholePost} />
          <PotholeList potholes={this.state.potholes} />
-         {/* <MapComponent /> */}
+         <MapContainer potholes={this.state.potholes} />
         </div>
         );
     }

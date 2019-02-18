@@ -32,12 +32,15 @@ div.head-container {
 }
 
 .pothole-item{
+  background-color: rgb(255, 255, 255);
+  color: #0082c5;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 40%;
   padding: 20px;
   margin: 10px;
   width: 245px;
+  border-radius: 6px;
 }
 
 .item-list {
