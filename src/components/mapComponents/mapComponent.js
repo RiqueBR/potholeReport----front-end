@@ -63,20 +63,4 @@ const singleMarker = props.potholes.map(handleMapMarker());
 export default MapComponent;
 
 
-function newFunction(data) {
-  let geocoder = new window.google.maps.Geocoder();
-  geocoder.geocode({ 'address': data.location }, function (results, status) {
-    if (status === 'OK') {
-      var lat = results[0].geometry.location.lat();
-      var lng = results[0].geometry.location.lng();
-      //lat = location.lat(),
-      //lng = location.lng(); 
-      console.log(lat, lng);
-    }
-    else {
-      console.log('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-  return geocoder;
-}
 // Glasgow lat: 55.86515, lng: -4.25763;
