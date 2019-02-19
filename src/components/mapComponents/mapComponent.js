@@ -38,16 +38,7 @@ const MapComponent = withScriptjs(withGoogleMap((props) =>{
                   );
 	}
 }
-const singleMarker = props.potholes.map(handleMapMarker());
-
-    
-
-      // const singleMarker = props.potholes.map( pothole => <MapMarker
-      //               key={pothole.id}
-      //               pothole={pothole}
-      //               location={{lat: pothole.lat, lng: pothole.lng}} 
-      //             />);
-              
+const singleMarker = props.potholes.map(handleMapMarker());              
                   
   return (
       <GoogleMap
